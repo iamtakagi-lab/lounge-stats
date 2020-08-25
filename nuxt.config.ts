@@ -1,5 +1,6 @@
+import { Configuration } from '@nuxt/types'
 
-export default {
+const config: Configuration = {
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -61,6 +62,10 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
+
+  serverMiddleware: [
+    '~/api/index.ts'
+  ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -80,5 +85,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  }
+  },
 }
+
+export default config
