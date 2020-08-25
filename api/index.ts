@@ -8,10 +8,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Require & Import API routes
-const playerRouter = require('./routers/playerRouter')
+const playersRouter = require('./routers/playersRouter')
 
 // Use API Routes
-app.use(playerRouter)
+app.use(playersRouter)
 
 // Export the server middleware
 module.exports = {
