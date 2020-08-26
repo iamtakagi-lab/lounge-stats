@@ -11,7 +11,11 @@ import SearchInput from '@/components/SearchInput.vue'
 import IndexLeaderboard from '@/components/leaderboard/IndexLeaderboard.vue'
 
 export default Vue.extend({
-  
+  head() {
+    return {
+      title: "Home",
+    };
+  },
 })
 </script>
 

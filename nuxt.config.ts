@@ -17,7 +17,7 @@ const config: Configuration = {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s / MK8DX 150cc Lounge',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

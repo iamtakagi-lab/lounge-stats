@@ -94,7 +94,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: "ホーム",
+      title: "Leaderboard",
     };
   },
   computed: {
