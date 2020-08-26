@@ -1,18 +1,18 @@
 <template>
   <div class="rounded-lg overflow-hidden shadow-lg mb-5 flex">
     <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">{{player.name}}</div>
-      <p class="text-gray-700 text-base dark:text-gray-400">Rank: {{player.rank}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">MMR: {{player.mmr}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">Peak MMR: {{player.peak_mmr}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">Win Rate: {{player.win_rate}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">W-L (Last 10): {{player.wl_last10}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">Gain/Loss (Last 10): {{player.gl_last10}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">Events Played: {{player.events_played}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">Largest Gain: {{player.largest_gain}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">Largest Loss: {{player.largest_loss}}</p>
-      <p class="text-gray-700 text-base dark:text-gray-400">Division: {{getDivisionData(player.mmr).division}}</p>
-      <p v-if="getDivisionData(player.mmr).division != 'Grandmaster'" class="text-gray-700 text-base dark:text-gray-400">Next Division: {{getNextDivisionData(player.mmr).division}} ({{(getNextDivisionData(player.mmr).start - player.mmr)}})</p>
+      <div class="font-bold text-lg mb-2">{{player.name}}</div>
+      <p class="text-gray-700 text-xs dark:text-gray-400">Rank: {{player.rank}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">MMR: {{player.mmr}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">Peak MMR: {{player.peak_mmr}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">Win Rate: {{player.win_rate}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">W-L (Last 10): {{player.wl_last10}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">Gain/Loss (Last 10): {{player.gl_last10}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">Events Played: {{player.events_played}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">Largest Gain: {{player.largest_gain}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">Largest Loss: {{player.largest_loss}}</p>
+      <p class="text-gray-700 text-xs dark:text-gray-400">Division: {{getDivisionData(player.mmr).division}}</p>
+      <p v-if="getDivisionData(player.mmr).division != 'Grandmaster'" class="text-gray-700 text-xs dark:text-gray-400">Next Division: {{getNextDivisionData(player.mmr).division}} ({{(getNextDivisionData(player.mmr).start - player.mmr)}})</p>
     </div>
      <div class="px-6 py-4 ml-10 pl-10 top-0 right-0 relative">
          <img :src="require(`@/assets/images/${getDivisionData(player.mmr).division.toLowerCase()}.png`)" width="128px" height="128px"/>
