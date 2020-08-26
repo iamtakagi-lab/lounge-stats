@@ -18,9 +18,15 @@ export default class GoogleSpreadSheets {
         return new gapis.sheets_v4.Sheets({ auth: client });
     }
 
-    fetchValueRange = async (): Promise<gapis.sheets_v4.Schema$ValueRange> => {
+    fetchValue = async (): Promise<gapis.sheets_v4.Schema$ValueRange> => {
         const authed = await this.auth();
         const res = await authed.spreadsheets.values.get({ spreadsheetId: this.spreadsheetId, range: this.tabTitle });
+        return res.data;
+    }
+
+    fetchValueRange = async (range: number): Promise<gapis.sheets_v4.Schema$ValueRange> => {
+        const authed = await this.auth();
+        const res = await authed.spreadsheets.values.get({ spreadsheetId: this.spreadsheetId, range: this.tabTitle+" !A2" + "K" + range + 2 });
         return res.data;
     }
 

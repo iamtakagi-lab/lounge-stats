@@ -1,4 +1,5 @@
 <template>
+
 <nav
     class="fixed top-0 z-40 w-full border-b dark:border-gray-800 bg-white dark:bg-gray-900"
     @click="scrollToTop"
@@ -22,7 +23,9 @@
 
       </div>
     </div>
+     
   </nav>
+
 </template>
 
 <script lang="ts">

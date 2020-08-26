@@ -24,7 +24,8 @@ const config: Configuration = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet' },
     ]
   },
   /*
@@ -52,25 +53,11 @@ const config: Configuration = {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode'
   ],
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt/content
-    '@nuxt/content',
-  ],
 
   serverMiddleware: [
     '~/api/index.ts'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {},
+  
   /*
   ** Content module configuration
   ** See https://content.nuxtjs.org/configuration
@@ -86,6 +73,45 @@ const config: Configuration = {
   */
   build: {
   },
+
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      },
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: ['fab']
+      }
+    ]
+  },
+
+    /*
+  ** Nuxt.js modules
+  */
+ modules: [
+  // Doc: https://axios.nuxtjs.org/usage
+  '@nuxtjs/axios',
+  '@nuxtjs/pwa',
+  // Doc: https://github.com/nuxt/content
+  '@nuxt/content',
+  'nuxt-fontawesome',
+],
+
+router: {
+  middleware: [
+    'getPlayers'
+  ]
+},
+
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+ axios: {
+  baseURL: 'http://localhost:3000/'
+},
 }
 
 export default config

@@ -6,5 +6,9 @@ export function getLeaderboardSheets() : GoogleSpreadSheets {
 }
 
 export async function getLeaderboardSheetData() : Promise<GoogleSheetData> {
-    return new GoogleSheetData(await getLeaderboardSheets().fetchValueRange())
+    return new GoogleSheetData(await getLeaderboardSheets().fetchValue())
+}
+
+export async function getLeaderboardSheetDataRange(range: number) : Promise<GoogleSheetData> {
+    return new GoogleSheetData(await getLeaderboardSheets().fetchValueRange(range))
 }

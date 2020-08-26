@@ -1,6 +1,6 @@
 import * as gapis from 'googleapis'
 import { PlayerData } from '~/types';
-import { notEmpty } from '../../lib/utils';
+import { notEmpty } from '../../utils';
 
 export class GoogleSheetData {
 

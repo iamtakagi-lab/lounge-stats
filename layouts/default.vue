@@ -1,9 +1,12 @@
 <template>
    <div>
     <Navbar />
-
    
      <main class="container mx-auto px-4 lg:px-8">
+
+         <div class="mt-10 pt-10">
+    <SearchInput/>
+ </div>
        <div class="flex flex-wrap relative">
           <transition name="fade">
           <Nuxt class="w-full"/>
