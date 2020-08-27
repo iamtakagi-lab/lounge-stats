@@ -16,7 +16,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: this.player.name + "'s Stats",
+      title: this.player.name + "'s Stats"
     };
   },
 });

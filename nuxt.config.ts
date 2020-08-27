@@ -17,11 +17,14 @@ const config: Configuration = {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
+    title: 'MK8DX 150cc Lounge',
     titleTemplate: '%s / MK8DX 150cc Lounge',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'description', name: 'description', content: 'Welcome to the MK8DX 150cc Lounge' },
+      { hid: 'og:description', property: 'og:description', content: 'Welcome to the MK8DX 150cc Lounge' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -51,8 +54,13 @@ const config: Configuration = {
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/google-analytics'
   ],
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID, // .env.production などに設定してください。
+  },
 
   serverMiddleware: [
     '~/api/index.ts'
@@ -72,6 +80,16 @@ const config: Configuration = {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+
+  manifest: {
+    name: 'MK8DX 150cc Lounge',
+    theme_color: '#000000',
+    background_color: '#ffffff',
+    display: 'standalone',
+    Scope: '/',
+    start_url: '/',
+    splash_pages: null
   },
 
   fontawesome: {
@@ -96,7 +114,7 @@ const config: Configuration = {
   '@nuxtjs/pwa',
   // Doc: https://github.com/nuxt/content
   '@nuxt/content',
-  'nuxt-fontawesome',
+  'nuxt-fontawesome'
 ],
 
 router: {
