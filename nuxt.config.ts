@@ -58,10 +58,6 @@ const config: Configuration = {
     '@nuxtjs/google-analytics'
   ],
 
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID, // .env.production などに設定してください。
-  },
-
   serverMiddleware: [
     '~/api/index.ts'
   ],
