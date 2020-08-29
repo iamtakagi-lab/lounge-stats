@@ -1,6 +1,6 @@
 # mk8dx-150cc-lounge
 
-Providing for MK8DX 150cc Lounge
+Providing to MK8DX 150cc Lounge
 
 Forum: https://www.mariokartcentral.com/forums/index.php?forums/mk8dx-150cc-lounge.249/
 
