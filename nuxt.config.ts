@@ -55,7 +55,9 @@ const config: Configuration = {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@nuxtjs/google-analytics'
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-176556228-1'
+    }]
   ],
 
   serverMiddleware: [
