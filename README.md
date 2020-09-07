@@ -1,20 +1,7 @@
 # mk8dx-150cc-lounge
 
-## Build Setup
+Providing to MK8DX 150cc Lounge
 
-```bash
-# install dependencies
-$ yarn install
+Forum: https://www.mariokartcentral.com/forums/index.php?forums/mk8dx-150cc-lounge.249/
 
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Main Leaderboard: https://docs.google.com/spreadsheets/d/1IPGK_kCgdqSLwcFjzgeLsRW7qV3MLCgcSBABdZHtK4o/edit?usp=sharing
