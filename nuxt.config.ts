@@ -118,13 +118,8 @@ router: {
   ** See https://axios.nuxtjs.org/options
   */
  axios: {
-<<<<<<< HEAD
-    baseURL: 'http://localhost:3000/'
-  },
-=======
   baseURL: 'http://localhost:3000/'
- },
->>>>>>> 4c2843879e210ebb8434e0e583b28af839f4e183
+ }
 }
 
 export default config
