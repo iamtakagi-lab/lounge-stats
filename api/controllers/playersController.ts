@@ -4,13 +4,12 @@ import { Request, Response, NextFunction } from 'express';
 import { getLeaderboardSheetData, getLeaderboardSheetDataRange } from '../../modules/spreadsheet';
 import { PlayerData } from '~/types';
 
-// 毎秒更新
+// 5秒更新
 let players: PlayerData[] = null
 
 async function update() {
     const sheet = await getLeaderboardSheetData()
     players = sheet.toPlayers()
-    console.log("a")
  }
 
 cron.schedule('*/5 * * * * *', () => { update() });
