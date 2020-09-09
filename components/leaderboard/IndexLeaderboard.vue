@@ -41,7 +41,6 @@
       class="mb-5 w-full bg-white hover:bg-gray-100 font-semibold py-2 px-4 border text-gray-600 dark:text-gray-400 border-gray-400 rounded shadow dark:border-gray-800 bg-white dark:bg-gray-900"
     >View More</button>
 
-
   </div>
 </template>
 

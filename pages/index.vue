@@ -1,8 +1,9 @@
 <template>
   <div>
     <IndexLeaderboard/>
+
+    <adsbygoogle ad-slot="5841114965" style="margin-bottom: 1em"/>
   </div>
-  
 </template>
 
 <script lang="ts">

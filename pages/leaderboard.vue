@@ -66,6 +66,8 @@
           disabled
         >Next</button>
       </div>
+
+      <adsbygoogle ad-slot="8896306108" style="margin-bottom: 1em"/>
   </div>
 </template>
 
