@@ -1,7 +1,12 @@
 <template>
-   <div class="mt-5">
+<div>
+    <div class="mt-5 mb-5">
      <StatsCard :player="player"/>
-  </div>
+    </div>
+
+    <adsbygoogle ad-slot="3372710209" style="margin-bottom: 1em"/>
+</div>
+
 </template>
 
 <script lang="ts">

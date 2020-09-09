@@ -55,7 +55,9 @@ const config: Configuration = {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@nuxtjs/google-analytics'
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-176556228-1'
+    }]
   ],
 
   serverMiddleware: [
@@ -88,19 +90,6 @@ const config: Configuration = {
     splash_pages: null
   },
 
-  fontawesome: {
-    imports: [
-      {
-        set: '@fortawesome/free-solid-svg-icons',
-        icons: ['fas']
-      },
-      {
-        set: '@fortawesome/free-brands-svg-icons',
-        icons: ['fab']
-      }
-    ]
-  },
-
     /*
   ** Nuxt.js modules
   */
@@ -110,7 +99,12 @@ const config: Configuration = {
   '@nuxtjs/pwa',
   // Doc: https://github.com/nuxt/content
   '@nuxt/content',
-  'nuxt-fontawesome'
+  ['@nuxtjs/google-adsense', {
+    id: 'ca-pub-7932483299460648',
+    pageLevelAds: true,
+    analyticsUacct: 'UA-176556228-1',
+    analyticsDomainName: '150cc-lounge.glitch.me'
+  }]
 ],
 
 router: {
@@ -125,7 +119,7 @@ router: {
   */
  axios: {
   baseURL: 'http://localhost:3000/'
-},
+ }
 }
 
 export default config

@@ -90,3 +90,7 @@ sw.*
 *.swp
 
 spreadsheet-keys.json
+
+ads.txt
+
+.nuxt.zip

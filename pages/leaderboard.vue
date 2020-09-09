@@ -66,6 +66,8 @@
           disabled
         >Next</button>
       </div>
+
+      <adsbygoogle ad-slot="8896306108" style="margin-bottom: 1em"/>
   </div>
 </template>
 
@@ -88,8 +90,7 @@ export default Vue.extend({
         "Largest Gain",
         "Largets Loss",
       ],
-      perPage: 50,
-      currentPage: 1,
+      perPage: 50
     };
   },
   head() {
