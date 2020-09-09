@@ -18,10 +18,6 @@ export class GoogleSheetData {
         return this.rows.map(this.toPlayerData).filter(notEmpty)
     }
 
-    findPlayer = (name: string): PlayerData => {
-        return this.toPlayers().find(player => player.name.toLowerCase() === name.toLowerCase())
-    }
-
     private toPlayerData = (row: any[]): PlayerData | undefined => {
 
         const data: PlayerData = {
