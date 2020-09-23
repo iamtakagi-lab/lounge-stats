@@ -1,37 +1,38 @@
 <template>
-   <div>
+  <div>
     <Navbar />
-   
-     <main class="container mx-auto px-4 lg:px-8">
 
-         <div class="mt-10 pt-10">
-    <SearchInput/>
- </div>
-       <div class="flex flex-wrap relative">
-          <transition name="fade">
-          <Nuxt class="w-full"/>
-         </transition>
-        </div>
-      </main>
+    <main class="container mx-auto px-4 lg:px-8">
 
-      <Footer />
-  
-   </div>
+      <div class="mt-10 pt-10">
+        <SearchInput />
+      </div>
+      <div class="flex flex-wrap relative">
+        <transition name="fade">
+          <Nuxt class="w-full" />
+        </transition>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 export default Vue.extend({
-   methods: {
-  },
-  head () {
+  methods: {},
+  head() {
     return {
       bodyAttrs: {
-        class: [...["h-screen lg:h-auto overflow-y-hidden lg:overflow-y-auto"], 'antialiased text-gray-800 leading-normal bg-white dark:bg-gray-900 dark:text-gray-100']
-      }
-    }
-   }
-})
+        class: [
+          ...["h-screen lg:h-auto overflow-y-hidden lg:overflow-y-auto"],
+          "antialiased text-gray-800 leading-normal bg-white dark:bg-gray-900 dark:text-gray-100",
+        ],
+      },
+    };
+  },
+});
 </script>
 
 <style lang="postcss">

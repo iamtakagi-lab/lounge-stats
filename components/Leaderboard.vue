@@ -64,7 +64,7 @@ export default Vue.extend({
         "Gain/Loss",
         "Events Played",
         "Largest Gain",
-        "Largets Loss",
+        "Largest Loss",
       ],
       modal: false,
       name: ''

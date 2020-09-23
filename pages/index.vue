@@ -1,6 +1,6 @@
 <template>
   <div>
-    <IndexLeaderboard/>
+    <Leaderboard/>
 
     <adsbygoogle ad-slot="5841114965" style="margin-bottom: 1em"/>
   </div>
@@ -9,7 +9,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import SearchInput from '@/components/SearchInput.vue'
-import IndexLeaderboard from '@/components/leaderboard/IndexLeaderboard.vue'
+import Leaderboard from '@/components/Leaderboard.vue'
 
 export default Vue.extend({
   head() {

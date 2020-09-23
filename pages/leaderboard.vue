@@ -88,7 +88,7 @@ export default Vue.extend({
         "Gain/Loss",
         "Events Played",
         "Largest Gain",
-        "Largets Loss",
+        "Largest Loss",
       ],
       perPage: 50
     };
