@@ -47,6 +47,7 @@ const config: Configuration = {
   ** See https://nuxtjs.org/api/configuration-components
   */
   components: true,
+
   /*
   ** Nuxt.js dev-modules
   */
@@ -78,6 +79,7 @@ const config: Configuration = {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    analyze: true
   },
 
   manifest: {
