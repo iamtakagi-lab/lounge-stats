@@ -16,7 +16,7 @@ cron.schedule('*/5 * * * * *', () => { update() });
 
 //プレイヤー検索
 const findPlayer = (name: string): PlayerData => {
-    return players.find(player => player.name.toLowerCase() === name.toLowerCase())
+    return players.find(player => player.name && player.name.toUpperCase() === name.toUpperCase())
 }
 
 module.exports.players = async function (req: Request, res: Response, next: NextFunction ) {
