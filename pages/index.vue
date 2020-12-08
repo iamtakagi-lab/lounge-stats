@@ -1,15 +1,15 @@
 <template>
   <div>
-    <Leaderboard/>
+    <Leaderboard />
 
-    <adsbygoogle ad-slot="5841114965" style="margin-bottom: 1em"/>
+    <adsbygoogle ad-slot="5841114965" style="margin-bottom: 1em" />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import SearchInput from '@/components/SearchInput.vue'
-import Leaderboard from '@/components/Leaderboard.vue'
+import Vue from "vue";
+import SearchInput from "@/components/SearchInput.vue";
+import Leaderboard from "@/components/Leaderboard.vue";
 
 export default Vue.extend({
   head() {
@@ -17,7 +17,7 @@ export default Vue.extend({
       title: "Home",
     };
   },
-})
+});
 </script>
 
 <style>

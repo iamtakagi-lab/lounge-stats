@@ -1,14 +1,14 @@
 const cron = require('node-cron');
 
 import { Request, Response, NextFunction } from 'express';
-import { getLeaderboardSheetData, getLeaderboardSheetDataRange } from '../../modules/spreadsheet';
+import { getSheetData } from '../../modules/spreadsheet';
 import { PlayerData } from '~/types';
 
 // 5秒更新
 let players: PlayerData[] = null
 
 async function update() {
-    const sheet = await getLeaderboardSheetData()
+    const sheet = await getSheetData()
     players = sheet.toPlayers()
  }
 

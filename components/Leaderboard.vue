@@ -26,10 +26,14 @@
               :key="key"
               class="border-t bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 dark:text-gray-400 font-bold tracking-wider text-xs dark:border-gray-800 bg-white dark:bg-gray-900"
             >
-              <div v-if="key == 'name'">
-                 <nuxt-link :to="`/players/${data[key]}`" @click="setName(data[key])">{{data[key]}}</nuxt-link>
+            
+              <div v-if="key === 'strikes_data'"></div>
+              <div v-else-if="key === 'name'">
+                <nuxt-link :to="`/players/${data[key]}`">{{
+                  data[key]
+                }}</nuxt-link>
               </div>
-              <div v-else>{{data[key]}}</div>
+              <div v-else>{{ data[key] }}</div>
             </td>
           </tr>
         </tbody>

@@ -3,7 +3,6 @@
     <Navbar />
 
     <main class="container mx-auto px-4 lg:px-8">
-
       <div class="mt-10 pt-10">
         <SearchInput />
       </div>

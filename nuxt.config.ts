@@ -1,6 +1,6 @@
-import { Configuration } from '@nuxt/types'
+import { NuxtConfig  } from '@nuxt/types'
 
-const config: Configuration = {
+const config: NuxtConfig  = {
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -64,12 +64,6 @@ const config: Configuration = {
   serverMiddleware: [
     '~/api/index.ts'
   ],
-  
-  /*
-  ** Content module configuration
-  ** See https://content.nuxtjs.org/configuration
-  */
-  content: {},
 
   colorMode: {
     preference: 'light'
@@ -99,8 +93,6 @@ const config: Configuration = {
   // Doc: https://axios.nuxtjs.org/usage
   '@nuxtjs/axios',
   '@nuxtjs/pwa',
-  // Doc: https://github.com/nuxt/content
-  '@nuxt/content',
   ['@nuxtjs/google-adsense', {
     id: 'ca-pub-7932483299460648',
     pageLevelAds: true,

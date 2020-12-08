@@ -1,14 +1,25 @@
 import { GoogleSheetData } from './GoogleSheetData';
 import GoogleSpreadSheets from "./GoogleSpreadSheets";
 
-export function getLeaderboardSheets() : GoogleSpreadSheets {
-    return new GoogleSpreadSheets("1IPGK_kCgdqSLwcFjzgeLsRW7qV3MLCgcSBABdZHtK4o", "Leaderboard")
+const id = '1IPGK_kCgdqSLwcFjzgeLsRW7qV3MLCgcSBABdZHtK4o'
+const leaderboard_sheet_name = 'Leaderboard'
+const strikes_sheet_name = 'Strikes'
+
+let leaderboard, strikes
+
+export function getLeaderboardSheets(): GoogleSpreadSheets {
+    if (!leaderboard) leaderboard = new GoogleSpreadSheets(id, leaderboard_sheet_name)
+    return leaderboard
 }
 
-export async function getLeaderboardSheetData() : Promise<GoogleSheetData> {
-    return new GoogleSheetData(await getLeaderboardSheets().fetchValue())
+export function getStrikesSheets(): GoogleSpreadSheets {
+    if (!strikes) strikes = new GoogleSpreadSheets(id, strikes_sheet_name)
+    return strikes
 }
 
-export async function getLeaderboardSheetDataRange(range: number) : Promise<GoogleSheetData> {
-    return new GoogleSheetData(await getLeaderboardSheets().fetchValueRange(range))
+export async function getSheetData(): Promise<GoogleSheetData> {
+    return new GoogleSheetData(
+        await getLeaderboardSheets().fetchValue(),
+        await getStrikesSheets().fetchValue()
+    )
 }
