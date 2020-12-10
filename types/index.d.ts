@@ -13,21 +13,8 @@ export interface PlayerData {
     events_played?: string | undefined | null
     largest_gain?: string | undefined | null
     largest_loss?: string | undefined | null 
-    history_data?: HistoryData | undefined | null 
     strikes_data?: StrikesData | undefined | null   
 }
-
-export interface HistoryData {
-    name?: string | undefined | null
-    mkc_id?: string | undefined | null
-    peak_mmr?: string | undefined | null
-    penalties?: string | undefined | null
-    rank?: string | undefined | null
-    mmr?: string | undefined | null
-    base_mmr?: string | undefined | null
-    match_history?: Array<string | undefined | null>
-}
-
 
 export interface StrikesData {
     name?: string | undefined | null
