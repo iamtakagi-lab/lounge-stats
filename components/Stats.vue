@@ -56,7 +56,7 @@
           <div class="font-bold text-base mt-2">- Dates</div>
 
           <div v-for="(date, i) in player.strikes_data.dates" :key="i">
-            <p v-if="date" class="text-gray-700 text-xs dark:text-gray-400">Strike {{i+=1}}: expires on {{date}}</p>
+            <p v-if="date" class="text-gray-700 text-xs dark:text-gray-400">Strike {{i+=1}}: expires on {{$dayjs(date).add(28, 'day').format('YYYY/MM/DD Z')}}</p>
           </div>
         </div>
 

@@ -98,8 +98,13 @@ const config: NuxtConfig  = {
     pageLevelAds: true,
     analyticsUacct: 'UA-176556228-1',
     analyticsDomainName: '150cc-lounge.glitch.me'
-  }]
+  }],
+  '@nuxtjs/dayjs'
 ],
+
+ // Optional
+ dayjs: {
+},
 
 router: {
   middleware: [
