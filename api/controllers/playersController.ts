@@ -1,7 +1,7 @@
 const cron = require('node-cron');
 
 import { Request, Response, NextFunction } from 'express';
-import { getSheetData } from '../../modules/spreadsheet';
+import { getSheetData } from '../../spreadsheet';
 import { PlayerData } from '~/types';
 
 // 5秒更新
