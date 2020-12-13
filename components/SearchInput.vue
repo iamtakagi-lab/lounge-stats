@@ -8,7 +8,9 @@
     >
       <label for="search" class="sr-only">Search</label>
       <div class="relative inline-flex w-full">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <div
+          class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+        >
           <IconSearch class="h-5 w-5 text-gray-500" />
         </div>
         <input
@@ -23,9 +25,11 @@
           @blur="onBlur"
         />
         <button
-          class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1  border dark:border-green-700 rounded"
+          class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1 border dark:border-green-700 rounded"
           @click="go"
-        >Search</button>
+        >
+          Search
+        </button>
       </div>
     </div>
   </div>
@@ -75,11 +79,13 @@ export default {
       }
     },
     go() {
-      const path = `/players/${this.q}`;
-      this.$router.push(path);
+      if (this.q) {
+        const path = `/players/${this.q}`;
+        this.$router.push(path);
 
-      this.$refs.search.blur();
-      this.q = "";
+        this.$refs.search.blur();
+        this.q = "";
+      }
     },
   },
 };

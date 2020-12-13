@@ -99,7 +99,8 @@ const config: NuxtConfig  = {
     analyticsUacct: 'UA-176556228-1',
     analyticsDomainName: '150cc-lounge.glitch.me'
   }],
-  '@nuxtjs/dayjs'
+  '@nuxtjs/dayjs',
+  '@nuxt/content'
 ],
 
  // Optional
