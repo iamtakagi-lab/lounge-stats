@@ -15,10 +15,17 @@ export const mutations = {
 }
 
 export const actions = {
-    async getPlayers({ $axios, commit, state }) {
+    async getPlayers({ $nuxt, $axios, commit, state }) {
         
+        if (process.browser) {
+            await window.$nuxt.$root.$loading.start();
+        }
+
         await this.$axios.$get('/api/players').then(async (res) => {
             await commit('setPlayers', res)
+            if (process.browser) {
+                await window.$nuxt.$root.$loading.finish();
+            }
            
         }).catch(console.error) 
     }
