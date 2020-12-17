@@ -89,8 +89,8 @@ sw.*
 # Vim swap files
 *.swp
 
-spreadsheet-keys.json
-
 ads.txt
 
 .nuxt.zip
+
+spreadsheet-keys.json
