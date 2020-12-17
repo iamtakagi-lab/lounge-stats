@@ -4,7 +4,7 @@
       <Stats :player="player" />
     </div>
 
-    <adsbygoogle :ad-slot="adslot" style="margin-bottom: 1em" />
+    <adsbygoogle ad-slot="3372710209" style="margin-bottom: 1em" />
   </div>
 </template>
 
@@ -23,11 +23,6 @@ export default Vue.extend({
     return {
       title: this.player.name + "'s Stats",
     };
-  },
-  computed: {
-    adslot() {
-      return process.env.ADSLOT_PLAYER_BOTTOM
-    }
   }
 });
 </script>

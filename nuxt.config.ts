@@ -58,7 +58,7 @@ const config: NuxtConfig = {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     ['@nuxtjs/google-analytics', {
-      id: process.env.ANALYTICS_ID
+      id: 'UA-176556228-1'
     }]
   ],
 
@@ -70,9 +70,9 @@ const config: NuxtConfig = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     ['@nuxtjs/google-adsense', {
-      id: process.env.ADSENSE_ID,
+      id: 'ca-pub-7932483299460648',
       pageLevelAds: true,
-      analyticsUacct: process.env.ANALYTICS_ID,
+      analyticsUacct: 'UA-176556228-1',
       analyticsDomainName: '150cc-lounge.glitch.me'
     }],
     '@nuxtjs/dayjs',

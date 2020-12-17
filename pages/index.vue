@@ -2,7 +2,7 @@
   <div>
     <Leaderboard />
 
-    <adsbygoogle :ad-slot="adslot" style="margin-bottom: 1em" />
+    <adsbygoogle ad-slot="5841114965" style="margin-bottom: 1em" />
   </div>
 </template>
 
@@ -16,11 +16,6 @@ export default Vue.extend({
     return {
       title: "Home",
     };
-  },
-  computed: {
-    adslot() {
-      return process.env.ADSLOT_INDEX_BOTTOM
-    }
   }
 });
 </script>

@@ -7,7 +7,7 @@
       </article>
     </div>
 
-    <adsbygoogle :ad-slot="adslot" style="margin-bottom: 1em" />
+    <adsbygoogle ad-slot="6327573771" style="margin-bottom: 1em" />
 
   </div>
 </template>
@@ -22,11 +22,6 @@ export default {
   head() {
     return {
       title: this.article.title
-    }
-  },
-  computed: {
-    adslot() {
-      return process.env.ADSLOT_SLUG_BOTTOM
     }
   }
 }
