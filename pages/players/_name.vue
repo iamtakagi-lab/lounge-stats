@@ -4,7 +4,7 @@
       <Stats :player="player" />
     </div>
 
-    <adsbygoogle :ad-slot="process.env.ADSLOT_PLAYER_BOTTOM" style="margin-bottom: 1em" />
+    <adsbygoogle :ad-slot="adslot" style="margin-bottom: 1em" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default Vue.extend({
     if (player === undefined)
       error({ statusCode: 404, message: "Player not found" });
     return {
-      player,
+      player
     };
   },
   head() {
@@ -24,5 +24,10 @@ export default Vue.extend({
       title: this.player.name + "'s Stats",
     };
   },
+  computed: {
+    adslot() {
+      return process.env.ADSLOT_PLAYER_BOTTOM
+    }
+  }
 });
 </script>

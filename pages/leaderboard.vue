@@ -93,7 +93,7 @@
       </button>
     </div>
 
-    <adsbygoogle :ad-slot="process.env.ADSLOT_LEADERBOARD_BOTTOM" style="margin-bottom: 1em" />
+    <adsbygoogle :ad-slot="adslot" style="margin-bottom: 1em" />
   </div>
 </template>
 
@@ -126,6 +126,11 @@ export default Vue.extend({
   },
   computed: {
     ...mapState(["players"]),
+
+     adslot() {
+      return process.env.ADSLOT_LEADERBOARD_BOTTOM
+    },
+
     getCurrent: function () {
       return this.currentPage * this.perPage;
     },
