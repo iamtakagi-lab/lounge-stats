@@ -2,7 +2,7 @@
   <div>
     <Leaderboard />
 
-    <adsbygoogle ad-slot="5841114965" style="margin-bottom: 1em" />
+    <adsbygoogle :ad-slot="process.env.ADSLOT_INDEX_BOTTOM" style="margin-bottom: 1em" />
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 export const state = () => ({
-    players: [],
+    players: []
 });
 
 export const getters = {
@@ -11,21 +11,14 @@ export const getters = {
 export const mutations = {
     setPlayers(state, payload) {
         state.players = payload
-    },
+    }
 }
 
 export const actions = {
-    async getPlayers({ $nuxt, $axios, commit, state }) {
-        
-        if (process.browser) {
-            await window.$nuxt.$root.$loading.start();
-        }
+    async getPlayers({ $axios, commit, state }) {
 
         await this.$axios.$get('/api/players').then(async (res) => {
             await commit('setPlayers', res)
-            if (process.browser) {
-                await window.$nuxt.$root.$loading.finish();
-            }
            
         }).catch(console.error) 
     }

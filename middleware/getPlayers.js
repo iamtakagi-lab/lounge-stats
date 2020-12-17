@@ -1,3 +1,3 @@
 export default async ({ store }) => {
-    if (!store.state.players.length) await store.dispatch('getPlayers')
-  }
+  if (!store.state.players.length) await store.dispatch('getPlayers')
+}

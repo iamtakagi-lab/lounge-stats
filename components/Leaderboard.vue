@@ -54,7 +54,8 @@ import { mapState, mapGetters } from "vuex";
 
 export default Vue.extend({
   computed: {
-    ...mapState(["players"]),
+     ...mapState(["loading"]),
+    ...mapState(["players"])
   },
   data() {
     return {

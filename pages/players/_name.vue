@@ -4,7 +4,7 @@
       <Stats :player="player" />
     </div>
 
-    <adsbygoogle ad-slot="3372710209" style="margin-bottom: 1em" />
+    <adsbygoogle :ad-slot="process.env.ADSLOT_PLAYER_BOTTOM" style="margin-bottom: 1em" />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
-import { NuxtConfig  } from '@nuxt/types'
+import { NuxtConfig } from '@nuxt/types'
 
-const config: NuxtConfig  = {
+const config: NuxtConfig = {
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -24,7 +24,8 @@ const config: NuxtConfig  = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'description', name: 'description', content: 'Welcome to the MK8DX 150cc Lounge' },
-      { hid: 'og:description', property: 'og:description', content: 'Welcome to the MK8DX 150cc Lounge' }
+      { hid: 'og:description', property: 'og:description', content: 'Welcome to the MK8DX 150cc Lounge' },
+      { name: 'keywords', content: 'MK8DX 150cc Lounge, MK8DX, Lounge, ラウンジ, らうんじ, マリオカート, マリオカート8DX, 8DX, らうんげ'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -57,8 +58,25 @@ const config: NuxtConfig  = {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     ['@nuxtjs/google-analytics', {
-      id: 'UA-176556228-1'
+      id: process.env.ANALYTICS_ID
     }]
+  ],
+
+  /*
+** Nuxt.js modules
+*/
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    ['@nuxtjs/google-adsense', {
+      id: process.env.ADSENSE_ID,
+      pageLevelAds: true,
+      analyticsUacct: process.env.ANALYTICS_ID,
+      analyticsDomainName: '150cc-lounge.glitch.me'
+    }],
+    '@nuxtjs/dayjs',
+    '@nuxt/content'
   ],
 
   serverMiddleware: [
@@ -143,38 +161,23 @@ const config: NuxtConfig  = {
     ]
   },
 
-    /*
-  ** Nuxt.js modules
-  */
- modules: [
-  // Doc: https://axios.nuxtjs.org/usage
-  '@nuxtjs/axios',
-  '@nuxtjs/pwa',
-  ['@nuxtjs/google-adsense', {
-    id: 'ca-pub-7932483299460648',
-    pageLevelAds: true,
-    analyticsUacct: 'UA-176556228-1',
-    analyticsDomainName: '150cc-lounge.glitch.me'
-  }],
-  '@nuxtjs/dayjs',
-  '@nuxt/content'
-],
 
-loading: { color: '#1DA1F2' },
 
-router: {
-  middleware: [
-    'getPlayers'
-  ]
-},
+  loading: { color: '#1DA1F2' },
+
+  router: {
+    middleware: [
+      'getPlayers'
+    ]
+  },
 
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
- axios: {
-  baseURL: 'http://localhost:3000/'
- }
+  axios: {
+    baseURL: 'http://localhost:3000/'
+  }
 }
 
 export default config

@@ -93,7 +93,7 @@
       </button>
     </div>
 
-    <adsbygoogle ad-slot="8896306108" style="margin-bottom: 1em" />
+    <adsbygoogle :ad-slot="process.env.ADSLOT_LEADERBOARD_BOTTOM" style="margin-bottom: 1em" />
   </div>
 </template>
 
