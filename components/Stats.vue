@@ -69,7 +69,7 @@
     <div class="px-6 py-4 ml-10 pl-10 top-0 right-0 relative">
       <img
         :src="
-          require(`@/assets/images/${getCurrent.name.toLowerCase()}.png`)
+          require(`/${getCurrent.name.toLowerCase()}.png`)
         "
         width="128px"
         height="128px"
