@@ -111,11 +111,9 @@ export default {
   data() {
     return {
       pv_loading: true,
-      total_pv: 0,
-      month_pv: 0,
     };
   },
-  async mounted() {
+  async asyncData() {
     let res1;
     let res2;
     try {
@@ -129,7 +127,11 @@ export default {
       ]);
     } catch (err) {
       console.log(err);
-      return; // １つでもエラーになったら、関数を抜ける
+      this.pv_loading = false;
+      return {
+        total_pv: 0,
+        month_pv: 0,
+      };
     }
     let total_pv, month_pv;
     const total_pv_find = res1.data.reports[0].data.rows.find(
@@ -144,9 +146,11 @@ export default {
     if (month_pv_find) {
       month_pv = month_pv_find.metrics[0].values[0];
     }
-    (this.total_pv = total_pv ? total_pv : 0),
-    (this.month_pv = month_pv ? month_pv : 0);
     this.pv_loading = false;
+    return {
+      total_pv: total_pv ? total_pv : 0,
+      month_pv: month_pv ? month_pv : 0,
+    };
   },
   props: {
     player: {
