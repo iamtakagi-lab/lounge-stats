@@ -1,0 +1,29 @@
+# Frontend: 3000
+# Backend: 8000
+# Nginx: 8086
+
+version: "3"
+services:
+  backend:
+    build: backend
+    restart: always
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - 8000:8000
+
+  frontend:
+    build: frontend
+    restart: always
+    environment:
+      TZ: Asia/Tokyo
+      
+  nginx:
+    build: nginx
+    ports:
+      - 8086:80
+    environment:
+      TZ: Asia/Tokyo
+    restart: always
+
+ 
