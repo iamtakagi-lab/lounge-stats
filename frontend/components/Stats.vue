@@ -10,7 +10,9 @@
         Stats
       </div>
 
-      <div class="px-6 py-4 border-solid border-r-4 border-b-4 border-l-4 border-blue-500">
+      <div
+        class="px-6 py-4 border-solid border-r-4 border-b-4 border-l-4 border-blue-500"
+      >
         <div class="font-bold text-lg">{{ player.name }}</div>
         <p class="text-gray-700 text-xs dark:text-gray-400">
           Rank: {{ player.rank }}
@@ -78,12 +80,17 @@
 
         <div class="mt-5">
           <div class="font-bold text-lg">Page Views</div>
-          <p class="text-gray-700 text-xs dark:text-gray-400">
-            Total: {{ total_pv }} views
-          </p>
-          <p class="text-gray-700 text-xs dark:text-gray-400">
-            This month: {{ month_pv }} views
-          </p>
+          <div v-if="pv_loading">
+            <p class="text-gray-700 text-xs dark:text-gray-400">Loading...</p>
+          </div>
+          <div v-else>
+            <p class="text-gray-700 text-xs dark:text-gray-400">
+              Total: {{ total_pv }} views
+            </p>
+            <p class="text-gray-700 text-xs dark:text-gray-400">
+              This month: {{ month_pv }} views
+            </p>
+          </div>
         </div>
 
         <div class="mt-5">
@@ -103,6 +110,7 @@
 export default {
   data() {
     return {
+      pv_loading: true,
       total_pv: 0,
       month_pv: 0,
     };
@@ -138,11 +146,12 @@ export default {
     }
     (this.total_pv = total_pv ? total_pv : 0),
     (this.month_pv = month_pv ? month_pv : 0);
+    this.pv_loading = false;
   },
   props: {
     player: {
       required: true,
-      type: Object
+      type: Object,
     },
   },
   computed: {
