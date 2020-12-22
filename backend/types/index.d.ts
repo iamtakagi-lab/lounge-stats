@@ -9,7 +9,7 @@ export type PlayerData = {
     events_played?: string | undefined | null
     largest_gain?: string | undefined | null
     largest_loss?: string | undefined | null 
-    strikes_data?: StrikesData | undefined | null   
+    strikes_data?: StrikesData | undefined | null
 }
 
 export type StrikesData = {

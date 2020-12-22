@@ -10,8 +10,8 @@
 
 <script>
 export default {
-   async asyncData({ store, params, error }) {
-    const player = store.getters.playerByName(params.name);
+   async asyncData({ $axios, store, params, error }) {
+    const player = await $axios.$get(`/players/${params.name}`)
     if (player === undefined)
       error({ statusCode: 404, message: "Player not found" });
     return {

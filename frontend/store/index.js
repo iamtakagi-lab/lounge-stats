@@ -29,7 +29,7 @@ export const mutations = {
 }
 
 export const actions = {
-    async updateStore({ $axios, commit, state }) {
+    async updateStore({ commit, state }) {
         let res1, res2, res3
 
         try {

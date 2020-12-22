@@ -57,7 +57,7 @@ module.exports.getPlayer = async function (req: Request, res: Response, next: Ne
    });
 
     const player = findPlayer(name)
-
+   
     if(player == undefined) return res.status(500).json({
         message: 'No found player'
     });
@@ -65,7 +65,7 @@ module.exports.getPlayer = async function (req: Request, res: Response, next: Ne
     return res.json(player)
 }
 
-module.exports.getTotalPageViews = async function (req: Request, res: Response, next: NextFunction) {
+const getTotalPageViews = async () => {
     const client = await google.auth.getClient({
         keyFile: './credentials/analytics-keys.json',
         scopes: 'https://www.googleapis.com/auth/analytics.readonly'
@@ -105,12 +105,10 @@ module.exports.getTotalPageViews = async function (req: Request, res: Response, 
             ]
         }
     })
-    res.header('Content-Type', 'application/json; charset=utf-8')
-    res.json(googleRes.data);
-    res.end();
+    return googleRes.data
 }
 
-module.exports.getMonthPageViews = async function (req: Request, res: Response, next: NextFunction) {
+const getMonthPageViews = async () => {
     const client = await google.auth.getClient({
         keyFile: './credentials/analytics-keys.json',
         scopes: 'https://www.googleapis.com/auth/analytics.readonly'
@@ -150,7 +148,5 @@ module.exports.getMonthPageViews = async function (req: Request, res: Response, 
             ]
         }
     })
-    res.header('Content-Type', 'application/json; charset=utf-8')
-    res.json(googleRes.data);
-    res.end();
+    return googleRes.data 
 }

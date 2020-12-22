@@ -79,21 +79,6 @@
         </div>
 
         <div class="mt-5">
-          <div class="font-bold text-lg">Page Views</div>
-          <div v-if="pv_loading">
-            <p class="text-gray-700 text-xs dark:text-gray-400">Loading...</p>
-          </div>
-          <div v-else>
-            <p class="text-gray-700 text-xs dark:text-gray-400">
-              Total: {{ total_pv }} views
-            </p>
-            <p class="text-gray-700 text-xs dark:text-gray-400">
-              This month: {{ month_pv }} views
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-5">
           <img
             :src="`/${getCurrent.name.toLowerCase()}.png`"
             width="128px"
@@ -108,50 +93,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      pv_loading: true,
-    };
-  },
-  async asyncData() {
-    let res1;
-    let res2;
-    try {
-      [res1, res2] = await Promise.all([
-        this.$axios.get("/total_page_views").catch((e) => {
-          throw e.message;
-        }),
-        this.$axios.get("/month_page_views").catch((e) => {
-          throw e.message;
-        }),
-      ]);
-    } catch (err) {
-      console.log(err);
-      this.pv_loading = false;
-      return {
-        total_pv: 0,
-        month_pv: 0,
-      };
-    }
-    let total_pv, month_pv;
-    const total_pv_find = res1.data.reports[0].data.rows.find(
-      (item) => item.dimensions.toString() === `/players/${this.player.name}`
-    );
-    if (total_pv_find) {
-      total_pv = total_pv_find.metrics[0].values[0];
-    }
-    const month_pv_find = res2.data.reports[0].data.rows.find(
-      (item) => item.dimensions.toString() === `/players/${this.player.name}`
-    );
-    if (month_pv_find) {
-      month_pv = month_pv_find.metrics[0].values[0];
-    }
-    this.pv_loading = false;
-    return {
-      total_pv: total_pv ? total_pv : 0,
-      month_pv: month_pv ? month_pv : 0,
-    };
-  },
   props: {
     player: {
       required: true,
