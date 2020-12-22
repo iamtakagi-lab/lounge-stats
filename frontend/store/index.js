@@ -4,7 +4,7 @@ export const state = () => ({
     stats: {
         total_players: 0,
         total_events_played: 0
-    },
+    }
 });
 
 export const getters = {
@@ -30,9 +30,7 @@ export const mutations = {
 
 export const actions = {
     async updateStore({ $axios, commit, state }) {
-        let res1;
-        let res2;
-        let res3;
+        let res1, res2, res3
 
         try {
             [res1, res2, res3] = await Promise.all([
