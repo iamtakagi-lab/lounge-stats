@@ -8,7 +8,7 @@ Collects & visualizes<br>
 MK8DX 150cc Lounge statistics page.
 </p>
 
-[Junp to page]('https://lounge-stats.herokuapp.com/')
+https://lounge-stats.herokuapp.com/
 </div>
 
 
