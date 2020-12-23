@@ -21,9 +21,9 @@ async function update() {
     players = sheet.toPlayers()
 
     last_refreshed = new Date().getTime()
- }
+}
 
-cron.schedule('*/5 * * * * *', () => { update() });
+cron.schedule('*/10 * * * * *', () => { update() });
 
 module.exports.stats = async function (req: Request, res: Response, next: NextFunction ) {
     
