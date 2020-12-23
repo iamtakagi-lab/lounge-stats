@@ -137,12 +137,9 @@
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(['stats', 'last_refreshed'])
+    ...mapState(['stats'])
   },
   methods: {
-    async reload() {
-      await this.$store.dispatch("updateStore");
-    },
     openUrl(url) {
       window.open(url, "_blank");
     },
